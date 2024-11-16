@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huile de Coco Pure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #27ae60;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            margin: 5px 0 15px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            max-width: 100%;
+            border-radius: 8px;
+            height: auto;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+        }
+
+        .product p {
+            margin: 5px 0;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        .order {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order h2 {
+    text-align: center;
+    color: #27ae60;
+}
+
+.order form {
+    display: flex;
+    flex-direction: column;
+}
+
+.order input, .order select, .order textarea, .order button {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.order button {
+    background-color: #27ae60;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.order button:hover {
+    background-color: #219150;
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Huile de Coco Pure</h1>
+    <p>Découvrez nos produits naturels à base d'huile de coco</p>
+</header>
+
+<section class="products">
+    <div class="product">
+        <img src="https://cdn.leonardo.ai/users/5c903b8c-2bf5-4535-957c-9b8a73a0c5ad/generations/403ec6f7-0c8b-4f17-bd23-dc566fb37dd0/Leonardo_Lightning_XL_I_want_pictures_and_bottles_of_coconut_o_3.jpg" alt="Huile de coco 500ml">
+        <h3>Huile de Coco - 500ml</h3>
+        <p>Prix : 10 €</p>
+    </div>
+    <div class="product">
+        <img src="https://cdn.leonardo.ai/users/5c903b8c-2bf5-4535-957c-9b8a73a0c5ad/generations/b3929ef0-f517-4e8c-945d-677b4e439283/Leonardo_Lightning_XL_Images_of_coconut_oil_in_a_onelitre_bott_2.jpg" alt="Huile de coco 1L">
+        <h3>Huile de coco - 1L</h3>
+        <p>Prix : 18 €</p>
+    </div>
+    <div class="product">
+        <img src="https://cdn.leonardo.ai/users/5c903b8c-2bf5-4535-957c-9b8a73a0c5ad/generations/b3929ef0-f517-4e8c-945d-677b4e439283/Leonardo_Lightning_XL_Images_of_coconut_oil_in_a_onelitre_bott_3.jpg" alt="Savon à l'huile de coco">
+        <h3>savon à Huile de Coco</h3>
+        <p>Prix : 5 €</p>
+    </div>
+    <div class="product">
+        <img src="https://cdn.leonardo.ai/users/5c903b8c-2bf5-4535-957c-9b8a73a0c5ad/generations/1ebf153f-39b9-487a-80ac-f9d36c51466d/Leonardo_Lightning_XL_Images_of_the_coconut_cream_1.jpg" alt="Crème à base de coco">
+        <h3>Crème Hydratante à la Coco</h3>
+        <p>Prix : 12 €</p>
+    </div>
+</section>
+
+<footer>
+    &copy; 2024 Huile de Coco Pure - Tous droits réservés.
+</footer>
+
+<section class="order">
+    <h2>Passer une commande</h2>
+    <form action="/submit_order" method="POST">
+        <label for="name">Nom complet :</label><br>
+        <input type="text" id="name" name="name" placeholder="Votre nom" required><br><br>
+
+        <label for="email">Email :</label><br>
+        <input type="email" id="email" name="email" placeholder="Votre email" required><br><br>
+
+        <label for="product">Produit :</label><br>
+        <select id="product" name="product">
+            <option value="huile_500ml">Huile de Coco - 500ml (10 €)</option>
+            <option value="huile_1L">Huile de Coco - 1L (18 €)</option>
+            <option value="savon_coco">Savon à l'Huile de Coco (5 €)</option>
+            <option value="creme_coco">Crème Hydratante à la Coco (12 €)</option>
+        </select><br><br>
+
+        <label for="quantity">Quantité :</label><br>
+        <input type="number" id="quantity" name="quantity" min="1" value="1" required><br><br>
+
+        <label for="address">Adresse de livraison :</label><br>
+        <textarea id="address" name="address" placeholder="Votre adresse complète" required></textarea><br><br>
+
+        <button type="submit">Commander</button>
+        <form action="/submit_order" methode="POST">
+    </form>
+</section>
+
+</body>
+</html>
